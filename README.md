@@ -3,11 +3,11 @@ About uncertainties
 
 Home: http://pythonhosted.org/uncertainties/
 
-Package license: BSD-3-Clause
+Package license: BSD 3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: Transparent calculations with uncertainties on the quantities involved (aka "error propagation"); fast calculation of derivatives
+Summary: Transparent calculations with uncertainties on the quantities involved (aka "error propagation"); fast calculation of derivatives.
 
 
 
