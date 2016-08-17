@@ -1,4 +1,4 @@
-{% set version = "2.4.8.1" %}
+{% set version = "3.0.1" %}
 
 package:
     name: uncertainties
@@ -6,11 +6,11 @@ package:
 
 source:
     fn: uncertainties-{{ version }}.tar.gz
-    url: https://pypi.io/packages/source/u/uncertainties/uncertainties-{{ version }}.tar.gz
-    sha256: 188b73e16983302cbed7cb24352be8542a0cc9bb0ae162829cf181e446bf361c
+    url: https://github.com/lebigot/uncertainties/archive/{{ version }}.tar.gz
+    sha256: eb7024831466a73bba7473e8378057a4eece3818c90225b7a64527ede5dbf1d4
 
 build:
-    number: 1
+    number: 0
     script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
