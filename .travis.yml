@@ -1,7 +1,10 @@
 # This file was generated automatically from conda-smithy. To update this configuration,
-# update the conda-forge.yaml and/or the recipe/meta.yaml.
+# update the conda-forge.yml and/or the recipe/meta.yaml.
 
-language: objective-c
+language: generic
+
+os: osx
+osx_image: beta-xcode6.1
 
 env:
   matrix:
@@ -9,6 +12,7 @@ env:
     - CONDA_PY=27
     - CONDA_PY=34
     - CONDA_PY=35
+    - CONDA_PY=36
   global:
     # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
     - secure: "AcPgZMqdAWeel6plnPDi4oBNy4rpCD691r6M7pO/cOo9gd9gwdylbauwlenKbEyOeuWfKa52rOgcEpttV1Hl/z84lzXs/+m2vxW88yKlcGH2OO/W+y365h8plY/di4jZja96R7Qt14tQ4jwV02LLobob0Qxi6eYPEz5Z8iyzo5I8ByHYDIWJcbGBw+fHOjot+cPSLx8HL3wlEePcCLJoLhXY9W9xRXKqKElqKnU9CiPFBwrEMsHYpmBpzd+75yYc/H/vjlLdtQrLsbN7Dlw79kdEVDcyM7Lo7kbUPtUBgoIxtV/tCmnbCMB4WbeGKNicKQkjS/eDlDjv2rW9hKcaF/YFZYNWZb1Fa2QTO/+NuSHe3ltnTCYCOJ5gNkvH66aTxvz1UZvyJ1fQc2Nx88/kAo9McJdFYWY2O26UhvJWlLqIrJKPqyzFDRo+ibuVDt7SoRRZkaIM8UtEdT9Yc+FoFWkO42UAn68ktaxf1I9K0cnmTKJZ30VZ5UAz2J8CEi7OqF59hSurpfha/3wLDRoDXJkN8Qgt95IKVLcnlZFvmhJz0980PYnVVDruOK1dhFYconOaYcwe+rmpYCsaFTvNtONRHvte2HwZPdrH0fyL7xH27+FwE15zLZMufwxT+VnkgWFg/p0FY5TM3tL3vGkjHBMhj9UGzNKkRZTrVdDT7hY="
@@ -22,12 +26,12 @@ before_install:
 
 install:
     - |
-      MINICONDA_URL="http://repo.continuum.io/miniconda"
+      MINICONDA_URL="https://repo.continuum.io/miniconda"
       MINICONDA_FILE="Miniconda3-latest-MacOSX-x86_64.sh"
-      curl -O "${MINICONDA_URL}/${MINICONDA_FILE}"
+      curl -L -O "${MINICONDA_URL}/${MINICONDA_FILE}"
       bash $MINICONDA_FILE -b
 
-      export PATH=/Users/travis/miniconda3/bin:$PATH
+      source /Users/travis/miniconda3/bin/activate root
       conda config --add channels conda-forge
       conda config --set show_channel_urls true
       conda install --yes --quiet conda-forge-build-setup
@@ -36,6 +40,4 @@ install:
 script:
   - conda build ./recipe
 
-after_success:
-
-  - ./ci_support/upload_or_check_non_existence.py ./recipe conda-forge --channel=main
+  - upload_or_check_non_existence ./recipe conda-forge --channel=main
