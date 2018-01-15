@@ -1,39 +1,38 @@
-{% set version = "3.0.1" %}
+{% set version = "3.0.2" %}
 
 package:
     name: uncertainties
     version: {{ version }}
 
 source:
-    fn: uncertainties-{{ version }}.tar.gz
-    url: https://github.com/lebigot/uncertainties/archive/{{ version }}.tar.gz
-    sha256: eb7024831466a73bba7473e8378057a4eece3818c90225b7a64527ede5dbf1d4
+  url: https://pypi.io/packages/source/u/uncertainties/uncertainties-{{ version }}.tar.gz
+  sha256: 91db922d54dff6094b4ea0d6e058f713a992cdf42e3ebaf73278e1893bfa2942
 
 build:
-    number: 0
-    script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 0
+  noarch: python
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-    build:
-        - python
-        - setuptools
-    run:
-        - python
-        - numpy
+  build:
+    - python
+    - pip
+  run:
+    - python
+    - numpy
 
 test:
-    imports:
-        - uncertainties
-        - uncertainties.unumpy
-    requires:
-        - nose
-        - numpy
+  imports:
+    - uncertainties
+    - uncertainties.unumpy
+  requires:
+    - numpy
 
 about:
-    home: http://pythonhosted.org/uncertainties/
-    license: BSD 3-Clause
-    summary: 'Transparent calculations with uncertainties on the quantities involved (aka "error propagation"); fast calculation of derivatives.'
+  home: http://pythonhosted.org/uncertainties/
+  license: BSD 3-Clause
+  summary: 'Transparent calculations with uncertainties on the quantities involved (aka "error propagation"); fast calculation of derivatives.'
 
 extra:
-    recipe-maintainers:
-        - ocefpaf
+  recipe-maintainers:
+    - ocefpaf
