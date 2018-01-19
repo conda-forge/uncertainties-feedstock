@@ -1,7 +1,7 @@
 About uncertainties
 ===================
 
-Home: http://pythonhosted.org/uncertainties/
+Home: https://pypi.python.org/pypi/uncertainties
 
 Package license: BSD 3-Clause
 
@@ -14,7 +14,9 @@ Summary: Transparent calculations with uncertainties on the quantities involved 
 Current build status
 ====================
 
-All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/uncertainties-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/uncertainties-feedstock)
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/uncertainties-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/uncertainties-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/uncertainties-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/uncertainties-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/uncertainties-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/uncertainties-feedstock/branch/master)
 
 Current release info
 ====================
