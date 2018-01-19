@@ -1,7 +1,7 @@
 About uncertainties
 ===================
 
-Home: http://pythonhosted.org/uncertainties/
+Home: https://pypi.python.org/pypi/uncertainties
 
 Package license: BSD 3-Clause
 
