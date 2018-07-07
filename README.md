@@ -14,14 +14,15 @@ Summary: Transparent calculations with uncertainties on the quantities involved 
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/uncertainties-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/uncertainties-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/uncertainties-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/uncertainties-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/uncertainties-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/uncertainties-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/uncertainties-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/uncertainties-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/uncertainties/badges/version.svg)](https://anaconda.org/conda-forge/uncertainties)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/uncertainties/badges/downloads.svg)](https://anaconda.org/conda-forge/uncertainties)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-uncertainties-green.svg)](https://anaconda.org/conda-forge/uncertainties) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/uncertainties.svg)](https://anaconda.org/conda-forge/uncertainties) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/uncertainties.svg)](https://anaconda.org/conda-forge/uncertainties) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/uncertainties.svg)](https://anaconda.org/conda-forge/uncertainties) |
 
 Installing uncertainties
 ========================
