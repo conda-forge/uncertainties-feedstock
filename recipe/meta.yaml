@@ -10,7 +10,8 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  skip: True  # [py27]
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
