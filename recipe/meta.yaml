@@ -11,7 +11,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -19,6 +19,8 @@ requirements:
     - pip
   run:
     - python >=3
+    - future
+    # optional
     - numpy
 
 test:
@@ -26,7 +28,9 @@ test:
     - uncertainties
     - uncertainties.unumpy
   requires:
-    - numpy
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://pypi.python.org/pypi/uncertainties
