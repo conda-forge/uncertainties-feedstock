@@ -5,22 +5,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/u/uncertainties/uncertainties-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/u/uncertainties/uncertainties-{{ version }}.tar.gz
   sha256: e62c86fdc64429828229de6ab4e11466f114907e6bd343c077858994cc12e00b
 
 build:
-  number: 1
+  number: 2
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
     - setuptools
     - setuptools_scm
   run:
-    - python >=3
+    - python >={{ python_min }}
     - future
     # optional
     - numpy
@@ -31,6 +31,7 @@ test:
     - uncertainties.unumpy
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
