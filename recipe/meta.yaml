@@ -1,4 +1,4 @@
-{% set version = "3.2.2" %}
+{% set version = "3.2.3" %}
 
 package:
   name: uncertainties
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/u/uncertainties/uncertainties-{{ version }}.tar.gz
-  sha256: e62c86fdc64429828229de6ab4e11466f114907e6bd343c077858994cc12e00b
+  sha256: 76a5653e686f617a42922d546a239e9efce72e6b35411b7750a1d12dcba03031
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
